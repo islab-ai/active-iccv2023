@@ -1,2 +1,1 @@
-# active-iccv2023
-Paper ACtive-ICCV2023
+# Adversarial Camouflage for Transferable and Intensive Vehicle Evasion

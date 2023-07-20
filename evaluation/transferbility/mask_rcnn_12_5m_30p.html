@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+    google.load("jquery", "1.3.2");
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
+    rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+    <title>DTAv2: Towards Robust Universal 3D Physical Camouflage Against Computer and Human Vision</title>
+    <meta property="og:description"
+        content="DTAv2: Towards Robust Universal 3D Physical Camouflage Against Computer and Human Vision" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../style.css">
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="paper-title">
+            <h1><a href="../../index.html">DTAv2: Towards Robust Universal 3D Physical Camouflage Against Computer and Human Vision</a></h1>
+            <h2>Anonymous</h2>
+        </div>
+
+        <div id="avs" class="modal">
+            <p>Available soon...</p>
+        </div>
+
+        <h2>Evaluation Results</h2>
+        <hr>
+
+        <h3>Robustness Evaluation in Photo-Realistic Simulation</h3>
+        <hr>
+        <div class="flex-row">
+            <a href="fasterrcnn_10m_30p.html" class="btn"><i class="fa fa-angle-left"></i></a>
+            <figure style="width: 80%;">
+                <h4 style="margin: 0px;">Target: Mask-RCNN | Camera: 12.5m Distance, 30° Pitch, 360° Rotation</h4>
+            </figure>
+            <a href="yolov3_7_5m_0p.html" class="btn"><i class="fa fa-angle-right"></i></a>
+        </div>
+
+        <div class="flex-row-center" style="margin-top: 10px;">
+            <button onclick="simulation_video('play', 'mask_rcnn_12_5m_30p')">Play/Pause</button>
+            <div style="width: 10px;"></div>
+            <button onclick="simulation_video('restart', 'mask_rcnn_12_5m_30p')">Restart</button>
+        </div>
+        <div class="flex-row">
+            <figure style="width: 50%;">
+                <video id="mask_rcnn_12_5m_30p_normal" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/normal.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+            <figure style="width: 50%;">
+                <video id="mask_rcnn_12_5m_30p_random" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/random.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+        </div>
+        <div class="flex-row">
+            <figure style="width: 50%;">
+                <video id="mask_rcnn_12_5m_30p_camou" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/CAMOU.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+            <figure style="width: 50%;">
+                <video id="mask_rcnn_12_5m_30p_er" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/ER.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+        </div>
+        <div class="flex-row">
+            <figure style="width: 50%;">
+                <video id="mask_rcnn_12_5m_30p_dta" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/DTA.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+            <figure style="width: 50%;">
+                <video id="mask_rcnn_12_5m_30p_dta2" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/DTAV2.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+        </div>
+        <!-- figure -->
+        
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>Normal Detection Rate: 97%</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/Normal_plot.jpg">
+                    <img width="100%" class="center" src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/Normal_plot.jpg">
+                </a>
+            </figure>
+        </div>
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>Random Detection Rate: 62%</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/Random_plot.jpg">
+                    <img width="100%" class="center" src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/Random_plot.jpg">
+                </a>
+            </figure>
+        </div>
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>CAMOU Detection Rate: 58%</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/CAMOU_plot.jpg">
+                    <img width="100%" class="center" src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/CAMOU_plot.jpg">
+                </a>
+            </figure>
+        </div>
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>ER <br>Detection Rate: 58%</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/ER_plot.jpg">
+                    <img width="100%" class="center" src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/ER_plot.jpg">
+                </a>
+            </figure>
+        </div>
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>DTA Detection Rate: 33%</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/DTA_plot.jpg">
+                    <img width="100%" class="center" src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/DTA_plot.jpg">
+                </a>
+            </figure>
+        </div>
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>DTAV2 Detection Rate: 20%</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/DTAv2_plot.jpg">
+                    <img width="100%" class="center" src="../../assets/evaluation/compare/mask_rcnn_12_5m_30p/DTAv2_plot.jpg">
+                </a>
+            </figure>
+        </div>
+
+        <hr>
+
+    </div>
+
+    <script src="../../script.js"></script>
+</body>
+
+</html>
