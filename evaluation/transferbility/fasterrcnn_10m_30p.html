@@ -132,6 +132,7 @@
             <div style="width: 10px;"></div>
             <button onclick="simulation_video('restart', 'fasterrcnn_10m_30p')">Restart</button>
         </div>
+
         <div class="flex-row">
             <figure style="width: 50%;">
                 <video id="fasterrcnn_10m_30p_normal" class="centered" width="95%" controls muted loop>
@@ -148,26 +149,51 @@
         </div>
         <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="fasterrcnn_10m_30p_camou" class="centered" width="95%" controls muted loop>
-                    <source src="../../assets/evaluation/compare/fasterrcnn_10m_30p/CAMOU.webm" type="video/webm">
+                <video id="fasterrcnn_10m_30p_dta2" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/fasterrcnn_10m_30p/native.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
+
             <figure style="width: 50%;">
-                <video id="fasterrcnn_10m_30p_er" class="centered" width="95%" controls muted loop>
-                    <source src="../../assets/evaluation/compare/fasterrcnn_10m_30p/ER.webm" type="video/webm">
+                <video id="fasterrcnn_10m_30p_camou" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/fasterrcnn_10m_30p/CAMOU.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
         </div>
         <div class="flex-row">
             <figure style="width: 50%;">
+                <video id="fasterrcnn_10m_30p_FCA" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/fasterrcnn_10m_30p/FCA.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+            <figure style="width: 50%;">
+                <video id="fasterrcnn_10m_30p_DAS" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/fasterrcnn_10m_30p/DAS.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+        </div>
+
+        <div class="flex-row">
+            <figure style="width: 50%;">
+                <video id="fasterrcnn_10m_30p_er" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/fasterrcnn_10m_30p/ER.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+            <figure style="width: 50%;">
                 <video id="fasterrcnn_10m_30p_dta" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/compare/fasterrcnn_10m_30p/DTA.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
-            <figure style="width: 50%;">
+        </div>
+        <!-- main result -->
+        <div class="flex-row">
+            <figure style="width: 100%;">
                 <video id="fasterrcnn_10m_30p_dta2" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/compare/fasterrcnn_10m_30p/ACTIVE.webm" type="video/webm">
                     Your browser does not support the video tag.
@@ -179,7 +205,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>Normal Detection Rate: 100%</p>
+                <p>Normal Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/fasterrcnn_10m_30p/Normal_plot.jpg">
@@ -191,7 +217,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>Random Detection Rate: 94%</p>
+                <p>Random Detection Rate :%</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/fasterrcnn_10m_30p/Random_plot.jpg">
@@ -203,7 +229,19 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>CAMOU Detection Rate: 86%</p>
+                <p>NaiveCam Detection Rate: %</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/fasterrcnn_10m_30p/NaiveCam_plot.jpg">
+                    <img width="100%" class="center"
+                        src="../../assets/evaluation/compare/fasterrcnn_10m_30p/NaiveCam_plot.jpg">
+                </a>
+            </figure>
+        </div>
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>CAMOU Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/fasterrcnn_10m_30p/CAMOU_plot.jpg">
@@ -212,10 +250,38 @@
                 </a>
             </figure>
         </div>
+
+
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>ER <br>Detection Rate: 96%</p>
+                <p>FCA Detection Rate: %</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/fasterrcnn_10m_30p/FCA_plot.jpg">
+                    <img width="100%" class="center"
+                        src="../../assets/evaluation/compare/fasterrcnn_10m_30p/FCA_plot.jpg">
+                </a>
+            </figure>
+        </div>
+
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>DAS Detection Rate: %</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/fasterrcnn_10m_30p/DAS_plot.jpg">
+                    <img width="100%" class="center"
+                        src="../../assets/evaluation/compare/fasterrcnn_10m_30p/DAS_plot.jpg">
+                </a>
+            </figure>
+        </div>
+
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>ER <br>Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/fasterrcnn_10m_30p/ER_plot.jpg">
@@ -227,7 +293,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>DTA Detection Rate: 65%</p>
+                <p>DTA Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/fasterrcnn_10m_30p/DTA_plot.jpg">
@@ -239,7 +305,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>ACTIVE Detection Rate: 33%</p>
+                <p>ACTIVE Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/fasterrcnn_10m_30p/ACTIVE_plot.jpg">

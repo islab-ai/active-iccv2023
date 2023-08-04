@@ -125,7 +125,7 @@
             <figure style="width: 80%;">
                 <h4 style="margin: 0px;">Target: SSD | Camera: 10m Distance, 15° Pitch, 360° Rotation</h4>
             </figure>
-            <a href="fasterrcnn_10m_30p.html" class="btn"><i class="fa fa-angle-right"></i></a>
+            <a href="ssd_10m_15p.html" class="btn"><i class="fa fa-angle-right"></i></a>
         </div>
 
         <div class="flex-row-center" style="margin-top: 10px;">
@@ -149,26 +149,51 @@
         </div>
         <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="ssd_10m_15p_camou" class="centered" width="95%" controls muted loop>
-                    <source src="../../assets/evaluation/compare/ssd_10m_15p/CAMOU.webm" type="video/webm">
+                <video id="ssd_10m_15p_dta2" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/ssd_10m_15p/native.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
+
             <figure style="width: 50%;">
-                <video id="ssd_10m_15p_er" class="centered" width="95%" controls muted loop>
-                    <source src="../../assets/evaluation/compare/ssd_10m_15p/ER.webm" type="video/webm">
+                <video id="ssd_10m_15p_camou" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/ssd_10m_15p/CAMOU.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
         </div>
         <div class="flex-row">
             <figure style="width: 50%;">
+                <video id="ssd_10m_15p_FCA" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/ssd_10m_15p/FCA.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+            <figure style="width: 50%;">
+                <video id="ssd_10m_15p_DAS" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/ssd_10m_15p/DAS.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+        </div>
+
+        <div class="flex-row">
+            <figure style="width: 50%;">
+                <video id="ssd_10m_15p_er" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/compare/ssd_10m_15p/ER.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+            <figure style="width: 50%;">
                 <video id="ssd_10m_15p_dta" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/compare/ssd_10m_15p/DTA.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
-            <figure style="width: 50%;">
+        </div>
+        <!-- main result -->
+        <div class="flex-row">
+            <figure style="width: 100%;">
                 <video id="ssd_10m_15p_dta2" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/compare/ssd_10m_15p/ACTIVE.webm" type="video/webm">
                     Your browser does not support the video tag.
@@ -180,7 +205,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>Normal Detection Rate: 99%</p>
+                <p>Normal Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/ssd_10m_15p/Normal_plot.jpg">
@@ -191,7 +216,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>Random Detection Rate: 89%</p>
+                <p>Random Detection Rate :%</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/ssd_10m_15p/Random_plot.jpg">
@@ -202,7 +227,19 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>CAMOU Detection Rate: 80%</p>
+                <p>NaiveCam Detection Rate: %</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/ssd_10m_15p/NaiveCam_plot.jpg">
+                    <img width="100%" class="center"
+                        src="../../assets/evaluation/compare/ssd_10m_15p/NaiveCam_plot.jpg">
+                </a>
+            </figure>
+        </div>
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>CAMOU Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/ssd_10m_15p/CAMOU_plot.jpg">
@@ -210,10 +247,36 @@
                 </a>
             </figure>
         </div>
+
+
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>ER <br>Detection Rate: 85%</p>
+                <p>FCA Detection Rate: %</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/ssd_10m_15p/FCA_plot.jpg">
+                    <img width="100%" class="center" src="../../assets/evaluation/compare/ssd_10m_15p/FCA_plot.jpg">
+                </a>
+            </figure>
+        </div>
+
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>DAS Detection Rate: %</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/compare/ssd_10m_15p/DAS_plot.jpg">
+                    <img width="100%" class="center" src="../../assets/evaluation/compare/ssd_10m_15p/DAS_plot.jpg">
+                </a>
+            </figure>
+        </div>
+
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>ER <br>Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/ssd_10m_15p/ER_plot.jpg">
@@ -224,7 +287,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>DTA Detection Rate: 77%</p>
+                <p>DTA Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/ssd_10m_15p/DTA_plot.jpg">
@@ -235,7 +298,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>ACTIVE Detection Rate: 0.9%</p>
+                <p>ACTIVE Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/compare/ssd_10m_15p/ACTIVE_plot.jpg">

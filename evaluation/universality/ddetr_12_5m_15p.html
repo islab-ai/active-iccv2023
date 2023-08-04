@@ -133,13 +133,13 @@
         </div>
         <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="ddetr_12_5m_15p_normal" class="centered" width="95%" controls muted loop>
+                <video id="fasterrcnn_10m_30p_normal" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/ddetr_12_5m_15p/normal.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
             <figure style="width: 50%;">
-                <video id="ddetr_12_5m_15p_random" class="centered" width="95%" controls muted loop>
+                <video id="fasterrcnn_10m_30p_random" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/ddetr_12_5m_15p/random.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
@@ -147,27 +147,39 @@
         </div>
         <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="ddetr_12_5m_15p_camou" class="centered" width="95%" controls muted loop>
+                <video id="fasterrcnn_10m_30p_dta2" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/universality/ddetr_12_5m_15p/native.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+
+            <figure style="width: 50%;">
+                <video id="fasterrcnn_10m_30p_camou" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/ddetr_12_5m_15p/CAMOU.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
+        </div>
+
+        <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="ddetr_12_5m_15p_er" class="centered" width="95%" controls muted loop>
+                <video id="fasterrcnn_10m_30p_er" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/ddetr_12_5m_15p/ER.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
-        </div>
-        <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="ddetr_12_5m_15p_dta" class="centered" width="95%" controls muted loop>
+                <video id="fasterrcnn_10m_30p_dta" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/ddetr_12_5m_15p/DTA.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
-            <figure style="width: 50%;">
-                <video id="ddetr_12_5m_15p_dta2" class="centered" width="95%" controls muted loop>
+
+        </div>
+        <!-- main result -->
+        <div class="flex-row">
+            <figure style="width: 100%;">
+                <video id="fasterrcnn_10m_30p_dta2" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/ddetr_12_5m_15p/ACTIVE.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
@@ -178,7 +190,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>Normal Detection Rate: 91%</p>
+                <p>Normal Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/ddetr_12_5m_15p/Normal_plot.jpg">
@@ -190,7 +202,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>Random Detection Rate: 86%</p>
+                <p>Random Detection Rate : %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/ddetr_12_5m_15p/Random_plot.jpg">
@@ -202,7 +214,19 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>CAMOU Detection Rate: 61%</p>
+                <p>NaiveCam Detection Rate: %</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/universality/ddetr_12_5m_15p/NaiveCam_plot.jpg">
+                    <img width="100%" class="center"
+                        src="../../assets/evaluation/universality/ddetr_12_5m_15p/NaiveCam_plot.jpg">
+                </a>
+            </figure>
+        </div>
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>CAMOU Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/ddetr_12_5m_15p/CAMOU_plot.jpg">
@@ -214,7 +238,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>ER <br>Detection Rate: 74%</p>
+                <p>ER <br>Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/ddetr_12_5m_15p/ER_plot.jpg">
@@ -226,7 +250,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>DTA Detection Rate: 41%</p>
+                <p>DTA Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/ddetr_12_5m_15p/DTA_plot.jpg">
@@ -238,7 +262,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>ACTIVE Detection Rate: 35%</p>
+                <p>ACTIVE Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/ddetr_12_5m_15p/ACTIVE_plot.jpg">

@@ -133,14 +133,14 @@
         </div>
         <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="dynamic_rcnn_10m_45p_normal" class="centered" width="95%" controls muted loop>
+                <video id="fasterrcnn_10m_30p_normal" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/normal.webm"
                         type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
             <figure style="width: 50%;">
-                <video id="dynamic_rcnn_10m_45p_random" class="centered" width="95%" controls muted loop>
+                <video id="fasterrcnn_10m_30p_random" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/random.webm"
                         type="video/webm">
                     Your browser does not support the video tag.
@@ -149,28 +149,41 @@
         </div>
         <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="dynamic_rcnn_10m_45p_camou" class="centered" width="95%" controls muted loop>
+                <video id="fasterrcnn_10m_30p_dta2" class="centered" width="95%" controls muted loop>
+                    <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/native.webm"
+                        type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+
+            <figure style="width: 50%;">
+                <video id="fasterrcnn_10m_30p_camou" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/CAMOU.webm"
                         type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
+        </div>
+
+        <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="dynamic_rcnn_10m_45p_er" class="centered" width="95%" controls muted loop>
+                <video id="fasterrcnn_10m_30p_er" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/ER.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
-        </div>
-        <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="dynamic_rcnn_10m_45p_dta" class="centered" width="95%" controls muted loop>
+                <video id="fasterrcnn_10m_30p_dta" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/DTA.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
-            <figure style="width: 50%;">
-                <video id="dynamic_rcnn_10m_45p_dta2" class="centered" width="95%" controls muted loop>
+
+        </div>
+        <!-- main result -->
+        <div class="flex-row">
+            <figure style="width: 100%;">
+                <video id="fasterrcnn_10m_30p_dta2" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/ACTIVE.webm"
                         type="video/webm">
                     Your browser does not support the video tag.
@@ -182,7 +195,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>Normal Detection Rate: 82%</p>
+                <p>Normal Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/Normal_plot.jpg">
@@ -194,7 +207,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>Random Detection Rate: 58%</p>
+                <p>Random Detection Rate : %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/Random_plot.jpg">
@@ -206,7 +219,19 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>CAMOU Detection Rate: 53%</p>
+                <p>NaiveCam Detection Rate: %</p>
+            </div>
+            <figure style="width: 90%;">
+                <a href="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/NaiveCam_plot.jpg">
+                    <img width="100%" class="center"
+                        src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/NaiveCam_plot.jpg">
+                </a>
+            </figure>
+        </div>
+        <div class="flex-row">
+            <div style="width: 10%;">
+                <br>
+                <p>CAMOU Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/CAMOU_plot.jpg">
@@ -218,7 +243,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>ER <br>Detection Rate: 56%</p>
+                <p>ER <br>Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/ER_plot.jpg">
@@ -230,7 +255,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>DTA Detection Rate: 36%</p>
+                <p>DTA Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/DTA_plot.jpg">
@@ -242,7 +267,7 @@
         <div class="flex-row">
             <div style="width: 10%;">
                 <br>
-                <p>ACTIVE Detection Rate: 0%</p>
+                <p>ACTIVE Detection Rate: %</p>
             </div>
             <figure style="width: 90%;">
                 <a href="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/ACTIVE_plot.jpg">
