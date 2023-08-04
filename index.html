@@ -204,7 +204,7 @@
             <br>
             <br>
 
-            <h2>More Universal</h2>
+            <h2>Triplanar Mapping</h2>
             <hr>
             <div class="flex-row">
                 <figure style="width: 100%;text-align: center; ">
@@ -228,7 +228,7 @@
                         This isadvantageous compared to the previous works that utilizelegacy texture
                         mapping on neural
                         rendering,
-                        which cannotgenerate a universal adversarial camouflage due to mappingbeing
+                        which cannotgenerate a universal adversarial camouflage due to mapping being
                         dependent on the 3D
                         object.
                 </div>
@@ -237,7 +237,7 @@
             <br>
             <br>
 
-            <h2>More Natural</h2>
+            <h2>Stealth Loss:</h2>
             <hr>
             <p>We incorporate a smooth loss anda camouflage loss to provide more naturalness.
                 Wealso modify the texture projection function to gener-ate smoother texture compared to
@@ -256,7 +256,7 @@
             <br>
             <br>
 
-            <h2>More Efficient</h2>
+            <h2>Random Output Augmentation (ROA)</h2>
             <hr>
             <p>We improve efficiency by reducing unnecessary factors, such as the number of DTN training
                 datasets and model
@@ -287,6 +287,36 @@
             <br>
             <br>
 
+            <h2>Smooth and Camouflage Loss</h2>
+            <hr>
+            <p>We improve efficiency by reducing unnecessary factors, such as the number of DTN training
+                datasets and model
+                layers.
+                First, we use ninecolors instead of 50 random colors to construct the DTNtraining
+                datasets. We select eight
+                boundary colors in theRGB color space (Red [255, 0, 0], Blue [0, 255, 0], Green[0, 0,
+                255], etc.) and one
+                middle color (Gray [128, 128,128]).
+                We expect that training the DTN to render nine col-ors representative of the RGB color
+                space will allow it
+                togeneralize to all other colors.
+                Further, we remove the Trans-formation Feature (TF) Subtractor and TF Adder,
+                two layerswithin the Expected Texture Transformer (a component in DTN) that we have
+                identified as redundant,
+                and replace thefinal activation function with sigmoid.
+            </p>
+            <figure style="width: 100%;">
+                <a href="assets/img/DTN2.png">
+                    <img width="100%" class="center" src="assets/img/DTN2.png" style="background-color:white;" />
+                </a>
+                <p class="caption" style="margin-bottom: 1px;">
+
+                </p>
+            </figure>
+
+
+            <br>
+            <br>
 
             <h2>Evaluation Results</h2>
             <hr>
@@ -323,17 +353,12 @@
                     Distance, 15° Pitch,
                     360°
                     Rotation</a></h4>
-            <h4><a href="evaluation/universality/dynamic_rcnn_7_5m_30p.html">Target: Dynamic R-CNN |
+            <h4><a href="evaluation/universality/dynamic_rcnn_10m_45p.html">Target: Dynamic R-CNN |
                     Camera: 7.5m Distance,
                     30° Pitch,
                     360°
                     Rotation</a></h4>
-            <h4><a href="evaluation/universality/sparse_rcnn_10m_15p.html">Target: Sparse-RCNN | Camera:
-                    10m Distance, 15°
-                    Pitch,
-                    360°
-                    Rotation</a></h4>
-            <h4><a href="evaluation/universality/ptv_10m_30p.html">Target: PTV | Camera: 10m Distance,
+            <h4><a href="evaluation/universality/ptv_12_5m_30p.html">Target: PTV | Camera: 12.5m Distance,
                     30° Pitch,
                     360° Rotation</a></h4>
 
@@ -350,7 +375,7 @@
                     Camera: 10m
                     Distance, 15° Pitch, 360°
                     Rotation</a></h4>
-            <h4><a href="evaluation/segmentation/maxdeeplab_7_5m_15p.html">Target: Max-DeepLab | Camera:
+            <!-- <h4><a href="evaluation/segmentation/maxdeeplab_7_5m_15p.html">Target: Max-DeepLab | Camera:
                     7.5m Distance, 15°
                     Pitch,
                     360°
@@ -358,8 +383,7 @@
             <h4><a href="evaluation/segmentation/maxdeeplab_10m_15p.html">Target: Max-DeepLab | Camera:
                     10m Distance, 15°
                     Pitch,
-                    360° Rotation</a></h4>
-
+                    360° Rotation</a></h4> -->
 
             <h3>Real-World Evaluation</h3>
             <hr>
