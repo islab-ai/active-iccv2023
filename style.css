@@ -79,6 +79,7 @@ section {
 }
 
 .row,
+.author-row,
 .affil-row {
     overflow: auto;
 }
