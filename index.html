@@ -6,6 +6,16 @@
     google.load("jquery", "1.3.2");
 </script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YQVECV1ZB"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-6YQVECV1ZB');
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
 <!-- jQuery Modal -->
@@ -117,22 +127,20 @@
             <h2>Abstract</h2>
             <hr>
             <p>
-                Adversarial camouflage methods have garnered increasing attention due to their ability
-                to attack object detectors from any viewpoint by covering the entire object's surface.
-                In this paper, we present Adversarial Camouflage for Transferable and Intensive Vehicle
-                Evasion (ACTIVE), a state-of-the-art physical camouflage attack framework designed to
-                generate universal and robust adversarial camouflage capable of concealing any 3D
-                vehicle from detectors. Our framework incorporates several innovative techniques to
-                enhance universality and robustness. First, we employ a sophisticated texture rendering
-                method that enables the application of common textures to different vehicles, without
-                being constrained to a specific texture map. Subsequently, we introduce a novel stealth
-                loss function that renders the vehicle undetectable, and utilize a smooth and a
-                camouflage loss that enhance the naturalness of the adversarial camouflage. Our
-                extensive experiments on 15 different models show that ACTIVE consistently outperforms
-                other adversarial camouflage methods on various publicly available detectors, including
-                the latest YOLOv7. Notably, our universality evaluations reveal promising
-                transferability to other vehicle classes, tasks (i.e., segmentation models), and to the
-                real world, not just to other vehicles.
+                Adversarial camouflage has garnered attention for its ability to attack object detectors from any
+                viewpoint by covering the entire object's surface. However, universality and robustness in existing
+                methods often fall short as the transferability aspect is often overlooked, thus restricting their
+                application only to a specific target with limited performance. To address these challenges, we present
+                Adversarial Camouflage for Transferable and Intensive Vehicle Evasion (ACTIVE), a state-of-the-art
+                physical camouflage attack framework designed to generate universal and robust adversarial camouflage
+                capable of concealing any 3D vehicle from detectors. Our framework incorporates innovative techniques to
+                enhance universality and robustness: a refined texture rendering that enables common texture application
+                to different vehicles without being constrained to a specific texture map, a novel stealth loss that
+                renders the vehicle undetectable, and a smooth and camouflage loss to enhance the naturalness of the
+                adversarial camouflage. Our extensive experiments on 15 different models show that ACTIVE consistently
+                outperforms existing works on various public detectors, including the latest YOLOv7. Notably, our
+                universality evaluations reveal promising transferability to other vehicle classes, tasks (segmentation
+                models), and the real world, not just other vehicles.
             </p>
 
             <table>
@@ -171,11 +179,15 @@
             <h2>ACTIVE Framework</h2>
             <hr>
             <p>
-                We employ a new attack loss func-tion and incorporate a Random Output Augmentation(ROA)
-                module by
-                augmenting the rendered adversarial examples from the original DTA using various
-                digitaltransformations to
-                increase the robustness.
+                To generate universal and robust adversarial camouflage, we propose the <b>ACTIVE framework</b>,
+                comprimising: (1) <b>Triplanar Mapping</b> with <b>Neural Texture Renderer</b>, (2) <b>Stealth Loss</b>,
+                (3) <b>Random Output Augmentation</b>, and (4) <b>Smooth and Camouflage Loss</b>. The overall framework
+                is illustrated in following figure:
+                <!-- To generate universal and robust adversarial camouflage, we propose the <b>ACTIVE framework</b>, which
+                employs an object-independent texture mapping with a neural renderer, a new attack loss function to
+                cause the vehicle undetectable, random output augmentation that enhance the texture robustness by
+                digital transformation, smooth and camouflage loss to enhance the texture naturalness. The overall
+                framework is illustrated in following figure. -->
 
             </p>
             <section id="teaser">
@@ -185,19 +197,10 @@
                     </a>
                     <p class="caption" style="margin-bottom: 1px;">
                         <b> Adversarial Camouflage for Transferable and Intensive Vehicle Evasion(ACTIVE) </b>
-                        We add ROA module and TPM module to increase the texture robustness for various digital
-                        transformations independent of objects.
-                        The module takes the output(i.e., adversarial example from the original DTA
-                        frame-work) and augments
-                        it
-                        by adding random transformationssuch as scaling, translation, brightness, and
-                        contrast.
-                        Al-though the DTN already provides robustness under variousphysical
-                        transformations,
-                        ROA allows us to acquire an ad-ditional level of robustness by the digital
-                        transformations.
-                        <!-- DTN is trained to learn the expected transformation of a rendered object when the texture is
-                        changed while retaining the target object's original properties. -->
+                        is a state-of-the-art physical camouflage attack framework designed to generate universal and
+                        robust adversarial camouflage capable of concealing any 3D vehicle from detectors. It enhances
+                        the robustness, universality, and naturalness of adversarial camouflage compared to previous
+                        methods.
                     </p>
                 </figure>
             </section>
@@ -205,22 +208,19 @@
             <br>
             <br>
 
-            <h2>Triplanar Mapping</h2>
+            <h2>Triplanar Mapping (TPM)</h2>
             <hr>
             <div class="flex-row">
-                <figure style="width: 45%;text-align: center; ">
-                    <a href="assets/img/triplanar_mapping_1.jpg">
-                        <img width="80%" style="background-color:white" src="assets/img/triplanar_mapping_1.jpg">
-                    </a>
-                </figure>
-                <figure style="width: 45%; ">
-                    <video class="centered" width="100%" controls muted loop autoplay>
-                        <source src="assets/video/demo/univer-demo.webm" type="video/webm" alter="real Video">
-                        Your browser does not support the video tag.
-                    </video>
-                </figure>
-                <div style="width: 100%;">
-                    <p> We use multiple 3D vehiclemodels instead of one to increase universality.
+                <div class="flex-row" style="width: 45%;">
+                    <p>
+                        We present the utilization of <b>triplanar mapping</b>, a texture mapping approach that applies
+                        textures to objects by projecting them from <b>three directions</b> based on their <b>surface
+                            coordinates and normals</b>, which can be derived from the depth image and camera parameter.
+                        This technique proves highly advantageous for generating <b>object-independent adversarial
+                            textures</b>, as it doesn't depend on object-specific texture maps. Consequently, we can
+                        optimize a single adversarial camouflage that works universally across multiple vehicles,
+                        rendering our attack <b>instance-agnostic</b>.
+                        <!-- We use multiple 3D vehiclemodels instead of one to increase universality.
                         We collectmultiple vehicle datasets from Unreal Engine and train asingle DTN
                         model to enable
                         rendering for various vehicles.
@@ -231,8 +231,92 @@
                         rendering,
                         which cannotgenerate a universal adversarial camouflage due to mapping being
                         dependent on the 3D
-                        object.
+                        object. -->
+                    </p>
                 </div>
+                <figure style="width: 50%; ">
+                    <video class="centered" width="100%" controls muted loop autoplay>
+                        <source src="assets/video/demo/univer-demo.webm" type="video/webm" alter="real Video">
+                        Your browser does not support the video tag.
+                    </video>
+                </figure>
+            </div>
+            <div class="flex-row">
+                <p>Figure: Triplanar Mapping pipeline and mechanism.</p>
+            </div>
+            <div class="flex-row">
+                <figure style="width: 50%;text-align: center; ">
+                    <a href="assets/img/triplanar_mapping_1.jpg">
+                        <img width="95%" style="background-color:white" src="assets/img/triplanar_mapping_1.jpg">
+                    </a>
+                    <p class="caption" style="margin-bottom: 1px; text-align: center;">
+                        (a) Triplanar mapping pipeline.
+                    </p>
+                </figure>
+                <figure style="width: 50%; ">
+                    <a href="assets/img/triplanar_mapping_2.jpg">
+                        <img width="95%" style="background-color:white" src="assets/img/triplanar_mapping_2.jpg">
+                    </a>
+                    <p class="caption" style="margin-bottom: 1px; text-align: center;">
+                        (b) Triplanar mapping mechanism.
+                    </p>
+                </figure>
+            </div>
+
+            <br>
+            <br>
+
+            <h2>Neural Texture Renderer (NTR)</h2>
+            <hr>
+            <p>We present <b>Neural Texture Renderer (NTR)</b>, the improvement of <a
+                    href="https://openaccess.thecvf.com/content/CVPR2022/html/Suryanto_DTA_Physical_Camouflage_Attacks_Using_Differentiable_Transformation_Network_CVPR_2022_paper.html">
+                    Differentiable Transformation Network (DTN) by our previous work</a> in the term of
+                <i>efficiency</i>.
+                While it effectively synergizes with our triplanar mapping approach to apply physical transformations
+                from the reference image, we identified redundancies within DTN, specifically in the
+                Transformation Features (TF) and the training process. The improvement of NTR over DTN is illustrated as
+                follows:
+            </p>
+            <p>
+                <b>Redundancy in Transformation Features</b>: <a
+                    href="https://openaccess.thecvf.com/content/CVPR2022/html/Suryanto_DTA_Physical_Camouflage_Attacks_Using_Differentiable_Transformation_Network_CVPR_2022_paper.html">
+                    DTN</a>, employs four Transformation Features
+                (TF): TF Subtractor + ReLU, TF Adder, TF Multiplier, and TF Final Adder, intended to encompass basic
+                transformations. We theorize that the initial two layers are redundant, with the last two layers
+                sufficient to encode TF. Thus, our final TF, mimic to weights and biases in Neural Network design,
+                comprises only TF Multiplier and TF Final Adder. Our NTR architecture, illustrated in Fig. <a
+                    href="assets/img/NTR_Architecture2.jpg">(a)</a>.
+            </p>
+            <p>
+                <b>Redundancy in Dataset</b>: <a
+                    href="https://openaccess.thecvf.com/content/CVPR2022/html/Suryanto_DTA_Physical_Camouflage_Attacks_Using_Differentiable_Transformation_Network_CVPR_2022_paper.html">
+                    DTN</a>'s training dataset encompasses 50 flat random color textures. We
+                contend this approach is inefficient, especially when training the network for multiple objects. To
+                foster generalization of colors, we propose training the network with eight boundary colors in RGB space
+                and gray [128, 128, 128] as the reference color. These eight boundary colors include primary (red,
+                green, blue), secondary (magenta, yellow, cyan), white, and black, as depicted in Fig. <a
+                    href="assets/img/ntr_boundary_colors.jpg">(b)</a>.
+            </p>
+            <div class="flex-row">
+                <figure style="width: 70%;text-align: center; ">
+                    <a href="assets/img/NTR_Architecture2.jpg">
+                        <img width="95%" style="background-color:white" src="assets/img/NTR_Architecture2.jpg">
+                    </a>
+                    <p class="caption" style="margin-bottom: 1px; text-align: center;">
+                        (a) Our Implemented NTR Architecture.
+                    </p>
+                </figure>
+                <figure style="width: 30%;">
+                    <br>
+                    <br>
+                    <a href="assets/img/ntr_boundary_colors.jpg">
+                        <img width="95%" style="background-color:white" src="assets/img/ntr_boundary_colors.jpg">
+                    </a>
+                    <br>
+                    <p class="caption" style="margin-bottom: 1px; text-align: center;">
+                        (b) Selected Boundary Colors in RGB Space
+                    </p>
+                </figure>
             </div>
 
             <br>
@@ -240,18 +324,33 @@
 
             <h2>Stealth Loss</h2>
             <hr>
-            <p>We incorporate a smooth loss anda camouflage loss to provide more naturalness.
-                Wealso modify the texture projection function to gener-ate smoother texture compared to
-                the original DTA.
+            <p> We propose <b>stealth loss</b> a novel attack loss function to make the object <b>undetectable</b>. The
+                loss function is designed to minimize <b>both</b> the <b>objectness score</b> and the <b>maximum
+                    confidence score across all classes</b> of <b>valid detection</b> (greater than the IOU
+                threshold), making our attack class-agnostic. This approach not only leads to misclassification but also
+                considers the possibility of the bounding box being empty, providing a more comprehensive adversarial
+                influence.
             </p>
-            <figure style="width: 100%;">
-                <a href="assets/img/natural.jpg">
-                    <img width="100%" src="assets/img/natural.jpg" style="background-color:white;">
-                </a>
-                <p class="caption" style="margin-bottom: 1px;">
-
-                </p>
-            </figure>
+            <div class="flex-row">
+                <figure style="width: 50%;text-align: center; ">
+                    <a href="assets/img/active_cls_loss_sample.png">
+                        <img width="95%" style="background-color:white" src="assets/img/active_cls_loss_sample.png">
+                    </a>
+                    <p class="caption" style="margin-bottom: 1px; text-align: center;">
+                        (a) Texture optimized by <a
+                            href="https://openaccess.thecvf.com/content/CVPR2022/html/Suryanto_DTA_Physical_Camouflage_Attacks_Using_Differentiable_Transformation_Network_CVPR_2022_paper.html">
+                            DTA's</a> L_atk. The cars are <b>missclassified</b>.
+                    </p>
+                </figure>
+                <figure style="width: 50%; ">
+                    <a href="assets/img/active_stealth_loss_sample.png">
+                        <img width="95%" style="background-color:white" src="assets/img/active_stealth_loss_sample.png">
+                    </a>
+                    <p class="caption" style="margin-bottom: 1px; text-align: center;">
+                        (b) Texture optimized by <b>Stealth Loss</b>. The cars are <b>undetected</b>.
+                    </p>
+                </figure>
+            </div>
 
 
             <br>
@@ -259,28 +358,24 @@
 
             <h2>Random Output Augmentation (ROA)</h2>
             <hr>
-            <p>We improve efficiency by reducing unnecessary factors, such as the number of DTN training
-                datasets and model
-                layers.
-                First, we use ninecolors instead of 50 random colors to construct the DTNtraining
-                datasets. We select eight
-                boundary colors in theRGB color space (Red [255, 0, 0], Blue [0, 255, 0], Green[0, 0,
-                255], etc.) and one
-                middle color (Gray [128, 128,128]).
-                We expect that training the DTN to render nine col-ors representative of the RGB color
-                space will allow it
-                togeneralize to all other colors.
-                Further, we remove the Trans-formation Feature (TF) Subtractor and TF Adder,
-                two layerswithin the Expected Texture Transformer (a component in DTN) that we have
-                identified as redundant,
-                and replace thefinal activation function with sigmoid.
+            <p>We introduce the <b>ROA</b> module to enhance texture robustness through diverse <b>digital
+                    transformations</b> (i.e., <a href="https://arxiv.org/abs/1707.07397">EOT</a>). This module takes
+                the output of NTR, which is the adversarial example, and augments it by applying random transformations
+                like scaling, translation, brightness, and contrast. While NTR offers robustness against <i>physical
+                    transformations</i>, ROA adds a layer of robustness through <i>digital transformations</i>,
+                simulating real-world changes to a certain extent. Notably,
+                this consideration of digital transformations is often absent in conventional adversarial camouflage
+                methods.
             </p>
             <figure style="width: 100%;">
-                <a href="assets/img/DTN2.png">
-                    <img width="100%" class="center" src="assets/img/DTN2.png" style="background-color:white;" />
+                <a href="assets/img/roa_ilustration.png">
+                    <img width="100%" class="center" src="assets/img/roa_ilustration.png"
+                        style="background-color:white;" />
                 </a>
                 <p class="caption" style="margin-bottom: 1px;">
-
+                    Ilustration of applying Random Output Augmentation (ROA) to the output of NTR.
+                    ROA applies random transformation to enhance the robustness of the adversarial camouflage by
+                    simulating real-world changes.
                 </p>
             </figure>
 
@@ -290,25 +385,30 @@
 
             <h2>Smooth and Camouflage Loss</h2>
             <hr>
-            <p>We improve efficiency by reducing unnecessary factors, such as the number of DTN training
-                datasets and model
-                layers.
-                First, we use ninecolors instead of 50 random colors to construct the DTNtraining
-                datasets. We select eight
-                boundary colors in theRGB color space (Red [255, 0, 0], Blue [0, 255, 0], Green[0, 0,
-                255], etc.) and one
-                middle color (Gray [128, 128,128]).
-                We expect that training the DTN to render nine col-ors representative of the RGB color
-                space will allow it
-                togeneralize to all other colors.
-                Further, we remove the Trans-formation Feature (TF) Subtractor and TF Adder,
-                two layerswithin the Expected Texture Transformer (a component in DTN) that we have
-                identified as redundant,
-                and replace thefinal activation function with sigmoid.
+            <p>
+                We employ a <b>smooth loss</b> (i.e., <a href="https://arxiv.org/abs/1412.0035">Total Variation (TV)</a>
+                loss)
+                to enhance the texture's smoothness anda <b>camouflage loss</b> to achieve adversarial camouflage,
+                encouraging texture-background similarity. The smooth loss enhances naturalness, while the camouflage
+                loss facilitates seamless blending with thebackground, rendering the vehicle less imperceptible to human
+                observers. Both losses enhance the natural appearance of the adversarial camouflage. Our study shows
+                that omitting smooth loss outputs a rough texture, whereas excluding camouflage loss makes it more
+                colorful and bright.
+                <!-- We utilize a smooth loss (i.e., Total Variation (TV) loss) that improves the smoothness of the generated
+                texture, and the camouflage loss to acquire the adversarial camouflage, which encourages the texture to
+                be similar to the background. The smooth loss enhances the naturalness of the adversarial camouflage,
+                while the camouflage loss is designed to make the adversarial camouflage blend in with the background,
+                making the vehicle invisible to human observer. Both losses enhance the naturalness of the adversarial
+                camouflage. -->
+
+                <!-- We utilize a smooth loss (i.e., Total Variation (TV) loss) and camouflage loss to improve texture's
+                naturalness for human vision as well as computer vision. The smooth loss encourages the texture to be
+                smooth, while the camouflage loss encourages the texture to be similar to the background. -->
             </p>
             <figure style="width: 100%;">
-                <a href="assets/img/DTN2.png">
-                    <img width="100%" class="center" src="assets/img/DTN2.png" style="background-color:white;" />
+                <a href="assets/img/smooth_camouflage_texture_and_rendered.png">
+                    <img width="100%" class="center" src="assets/img/smooth_camouflage_texture_and_rendered.png"
+                        style="background-color:white;" />
                 </a>
                 <p class="caption" style="margin-bottom: 1px;">
 
@@ -412,7 +512,15 @@
             <h2>Citation</h2>
             <hr>
             <pre><code>
-                Available soon...
+    @InProceedings{Suryanto_2023_ICCV,
+        author    = {Suryanto, Naufal and Kim, Yongsu and Larasati, Harashta Tatimma and Kang, Hyoeun and 
+        Le, Thi-Thu-Huong and Hong, Yoonyoung and Yang, Hunmin and Oh, Se-Yoon and Kim, Howon},
+        title     = {ACTIVE: Towards Highly Transferable 3D Physical Camouflage for Universal and Robust
+            Vehicle Evasion},
+        booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+        month     = {October},
+        year      = {2023},
+    }
             </code></pre>
         </section>
 
@@ -422,31 +530,42 @@
             <hr>
             <div class="flex-row">
                 <div style="box-sizing: border-box; padding: 16px; margin: auto;">
-                    <a href="assets/paper_preview.png"><img class="screenshot" src="assets/paper_preview.png"></a>
+                    <a href="assets/img/active_preview.PNG"><img class="screenshot"
+                            src="assets/img/active_preview.PNG"></a>
                 </div>
                 <div style="width: 50%">
                     <p><b></b></p>
                     <p>
-                        ICCV 2023
+                        <b>ACTIVE: Towards Highly Transferable 3D Physical Camouflage for Universal and Robust Vehicle
+                            Evasion</b>
+                    </p>
+                    <p>
+                        Naufal Suryanto, Yongsu Kim, Harashta Tatimma Larasati, Hyoeun Kang, Thi-Thu-Huong Le,
+                        Yoonyoung Hong, Hunmin Yang, Se-Yoon Oh, Howon Kim
                     </p>
                     <div><span class="material-icons"> description </span>
-                        <a>
+                        <a href="#">
                             Paper ( Available soon )
                         </a>
                     </div>
                     <div><span class="material-icons"> description </span>
-                        <a href="" rel="modal:open">
+                        <a href="#">
                             Supplementary ( Available soon )
                         </a>
                     </div>
                     <div><span class="material-icons"> description </span>
-                        <a href="">
+                        <a href="#">
                             arXiv ( Available soon )
                         </a>
                     </div>
                     <div><span class="material-icons"> description </span>
-                        <a href="">
-                            BibTeX ( Available soon )
+                        <a href="#">
+                            Materials and Docs ( Available soon )
+                        </a>
+                    </div>
+                    <div><span class="material-icons"> description </span>
+                        <a href="./bib.txt">
+                            BibTeX
                         </a>
                     </div>
                 </div>
