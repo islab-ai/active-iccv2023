@@ -6,6 +6,17 @@
     google.load("jquery", "1.3.2");
 </script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YQVECV1ZB"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-6YQVECV1ZB');
+</script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
 <!-- jQuery Modal -->
@@ -127,20 +138,20 @@
         </div>
 
         <div class="flex-row-center" style="margin-top: 10px;">
-            <button onclick="simulation_video('play', 'dynamic_rcnn_10m_45p')">Play/Pause</button>
+            <button onclick="transferability_video('play', 'dynamic_rcnn_10m_45p')">Play/Pause</button>
             <div style="width: 10px;"></div>
-            <button onclick="simulation_video('restart', 'dynamic_rcnn_10m_45p')">Restart</button>
+            <button onclick="transferability_video('restart', 'dynamic_rcnn_10m_45p')">Restart</button>
         </div>
         <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="fasterrcnn_10m_30p_normal" class="centered" width="95%" controls muted loop>
+                <video id="dynamic_rcnn_10m_45p_normal" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/normal.webm"
                         type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
             <figure style="width: 50%;">
-                <video id="fasterrcnn_10m_30p_random" class="centered" width="95%" controls muted loop>
+                <video id="dynamic_rcnn_10m_45p_random" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/random.webm"
                         type="video/webm">
                     Your browser does not support the video tag.
@@ -149,7 +160,7 @@
         </div>
         <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="fasterrcnn_10m_30p_dta2" class="centered" width="95%" controls muted loop>
+                <video id="dynamic_rcnn_10m_45p_naive" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/native.webm"
                         type="video/webm">
                     Your browser does not support the video tag.
@@ -157,7 +168,7 @@
             </figure>
 
             <figure style="width: 50%;">
-                <video id="fasterrcnn_10m_30p_camou" class="centered" width="95%" controls muted loop>
+                <video id="dynamic_rcnn_10m_45p_camou" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/CAMOU.webm"
                         type="video/webm">
                     Your browser does not support the video tag.
@@ -167,13 +178,13 @@
 
         <div class="flex-row">
             <figure style="width: 50%;">
-                <video id="fasterrcnn_10m_30p_er" class="centered" width="95%" controls muted loop>
+                <video id="dynamic_rcnn_10m_45p_er" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/ER.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </figure>
             <figure style="width: 50%;">
-                <video id="fasterrcnn_10m_30p_dta" class="centered" width="95%" controls muted loop>
+                <video id="dynamic_rcnn_10m_45p_dta" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/DTA.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
@@ -183,7 +194,7 @@
         <!-- main result -->
         <div class="flex-row">
             <figure style="width: 100%;">
-                <video id="fasterrcnn_10m_30p_dta2" class="centered" width="95%" controls muted loop>
+                <video id="dynamic_rcnn_10m_45p_active" class="centered" width="95%" controls muted loop>
                     <source src="../../assets/evaluation/universality/dynamic_rcnn_10m_45p/ACTIVE.webm"
                         type="video/webm">
                     Your browser does not support the video tag.
